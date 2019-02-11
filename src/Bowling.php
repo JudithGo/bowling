@@ -51,7 +51,7 @@ class Bowling
             return $this->calculateSpare($key, $rolls);
         }
         if($this->isNumeric($key, $rolls)){
-            return $this->calculateNumeric($key, $rolls);
+            return $key < 10 ? $this->calculateNumeric($key, $rolls) : 0;
         }
 
 
@@ -65,7 +65,7 @@ class Bowling
         }
 
         if(isset($rolls[$key+1]) && strlen($rolls[$key+1]) === 2){
-            return $rolls[$key+1][1] === '/' ? 20 : 10 + $rolls[$key+2][0] + $rolls[$key+2][1];
+            return $rolls[$key+1][1] === '/' ? 20 : 10 + $rolls[$key+1][0] + $rolls[$key+1][1];
         }
 
 
