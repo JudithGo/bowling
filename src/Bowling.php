@@ -64,8 +64,8 @@ class Bowling
             }    
         }
 
-        if(isset($rolls[$key+1]) && strlen($rolls[$key]) === 2){
-            return $rolls[$key+2][1] === '/' ? 10 : $rolls[$key+2][0] + $rolls[$key+2][1];
+        if(isset($rolls[$key+1]) && strlen($rolls[$key+1]) === 2){
+            return $rolls[$key+1][1] === '/' ? 20 : 10 + $rolls[$key+2][0] + $rolls[$key+2][1];
         }
 
 
@@ -114,7 +114,7 @@ class Bowling
 
 
     // Primera iteración
-    
+
     // public function convert(string $param) 
     // {   
     //     $turn = false;
